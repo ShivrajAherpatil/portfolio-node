@@ -1,0 +1,271 @@
+/* ===== ROOT THEME ===== */
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --secondary: #0ea5e9;
+    --accent: #06b6d4;
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --border: #e5e7eb;
+    --glass: rgba(255, 255, 255, 0.85);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* DARK MODE */
+
+[data-theme="dark"] {
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --border: #334155;
+    --glass: rgba(15, 23, 42, 0.9);
+}
+
+
+/* RAINBOW MODE 🌈 */
+
+[data-theme="rainbow"] {
+    --primary: #ff006e;
+    --primary-dark: #8338ec;
+    --secondary: #3a86ff;
+    --accent: #06d6a0;
+}
+
+
+/* GLOBAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    scroll-behavior: smooth;
+}
+
+
+/* ===== NAVBAR ===== */
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+.nav-link:hover {
+    color: var(--primary);
+}
+
+.nav-menu.active {
+    left: 0;
+}
+
+
+/* ===== HERO ===== */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero-subtitle {
+    margin: 1rem 0;
+    color: var(--text-secondary);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+
+/* BUTTONS */
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn-secondary {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-secondary:hover {
+    background: var(--primary);
+    color: white;
+}
+
+
+/* PROFILE */
+
+.profile-img {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary);
+}
+
+
+/* SOCIAL */
+
+.social-links {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    background: var(--glass);
+    padding: 10px;
+    border-radius: 50%;
+    color: var(--primary);
+}
+
+.social-links a:hover {
+    background: var(--primary);
+    color: white;
+}
+
+
+/* SECTIONS */
+
+section {
+    padding: 80px 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
+/* WHY ME */
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.why-item {
+    background: var(--glass);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+/* PROJECTS */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.project-card {
+    background: var(--glass);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.project-links {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-small {
+    padding: 5px 10px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+}
+
+
+/* CONTACT */
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
